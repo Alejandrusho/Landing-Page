@@ -1,0 +1,496 @@
+/* Generales */
+
+body{
+    background-color: rgb(252, 251, 249);
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+nav ul, nav ol, nav li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a{
+    /*color:inherit;*/
+    text-decoration: none;
+}
+
+a{
+    color: white;                                               /*Color letra*/
+    text-decoration: none;
+    position: relative;
+    display: block;
+}
+
+.type-a {
+    font-size: 14px;
+    line-height: 1.5em;
+    letter-spacing: .15em;
+    font-weight: 500;
+}
+@media only screen and (max-width:1366px){
+    .type-a{
+        font-size: 12px;
+    }
+}
+
+#kohoLetter{
+    font-family: 'KoHo', sans-serif;
+}
+
+#kohoStyleLetter{
+    font-family: 'KoHo', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+    color:whitesmoke;
+    font-weight: 800;
+}
+
+                                                        /* HEADER */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.reverse-scroll, .reverse-mouse{                                                                /* NAV EN BLANCO */
+    background-color: whitesmoke;
+    transition: all .47s cubic-bezier(.075,.82,.165,1);
+}
+.reverse-scroll ul li a,
+.reverse-scroll .nav-logo a{
+    color: black;
+}
+
+.reverse-mouse ul li a,
+.reverse-mouse .nav-logo a{
+    color: black;
+}
+
+.headerInterior{
+    transition: all .25s cubic-bezier(0.07, 0.86, 0.17, 1);
+    position: relative;
+    z-index: 10;
+}
+@media only screen and (min-width: 1025px), (orientation: landscape){
+    .header .headerInterior{
+        height: 3.5vw;
+    }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1366px), only screen and (orientation: landscape) and (max-width: 1366px){
+    .header .headerInterior{
+        height: 4.5vw;
+    }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1024px) and (orientation: landscape), only screen and (orientation: landscape) and (max-width: 1024px){
+    .header .headerInterior{
+        height: 6vw;
+    }
+}
+
+
+.headerBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    height: 3.54167vw;  
+    padding: 0 2.60417vw
+}
+@media only screen and (max-width:1366px){
+    .header .headerInterior .headerBar{
+        padding: 0 3.9vw;
+        height: 4.5vw;
+    }
+}
+@media only screen and (max-width: 1024px) and (orientation: landscape){
+    .header .headerInterior .headerBar{
+        height: 6vw;
+    }
+}
+@media only screen and (max-width:1024px) and (orientation: portrait){
+    .header .headerInterior .headerBar{
+        height: 7vw;
+        padding: 0 2.6vw;
+        /*padding-right: calc(2.6vw - 11px);*/
+    }
+}
+@media only screen and (max-width: 767px) and (orientation: portrait){
+    .header .headerInterior .headerBar{
+        height: 16.5vw;
+        padding: 0 5.3vw;
+        /*padding-right: calc(5.3vw - 11px);*/
+    }
+}
+
+@media only screen and (min-width:1025px), (orientation: landscape){
+    .nav-main, .nav-utility{
+        height: 100%;
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 1024px) and (orientation: portrait){
+    .nav-main{
+        position:fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        height: 6.5vw;
+        z-index: 100;
+    }
+
+    .nav-utility{
+        width: 10.41vw;
+    }
+}
+@media only screen and (max-width: 1024px) and (orientation: portrait) and (max-width: 767px) and (orientation: portrait){
+    .nav-main{
+        height: 13.3vw;
+    }
+
+    .nav-utility{
+        width: 21.33vw;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: portrait){                     /**/
+    .desktop-only {
+        display: none!important;
+    }
+}
+                                                        /* SUBMENÚ */
+
+.navInterior{
+    display: flex;
+    height: 100%;
+    justify-content: flex-start;
+    line-height: 1.5em;
+}
+@media only screen and (max-width: 1024px) and (orientation:portrait) {
+    .nav-main .navInterior{
+        padding-left: 2.6vw;
+        padding-right: 2.6vw;
+        padding-top: 0vw;
+        justify-content: space-between;
+    }
+
+    .nav-main .navInterior{
+        position: relative;
+    }
+}
+@media only screen and (max-width: 1024px) and (orientation: portrait) and (max-width: 767px) and (orientation: portrait){
+    .nav-main .navInterior {
+        height: 13.3vw;
+        padding-top: 0vw;
+        padding-left: 5.3vw;
+        padding-right: 5.3vw;
+    }
+}
+
+.navMarginR{
+    margin-right: 1.8vw;
+}
+@media only screen and (max-width: 1366px){
+    .navInterior .navMarginR{
+        margin-right: 2.3vw;
+    }
+}
+@media only screen and (max-width: 1366px) and (orientation: portrait){
+    .navInterior .navMarginR{
+        margin-right: 0;
+    }
+}
+
+.navOptionPosition{
+    /*height: 100%;*/
+    display: flex;
+    align-items: center;
+    padding: 0.52vw 0;
+    transition: all 250ms ease;
+}
+@media only screen and (max-width: 1366px){
+    .navInterior .navOptionPosition{
+        padding: 0.78vw 0;
+    }
+}
+
+.stylesA:hover{
+    border-bottom: 1px solid black;
+}
+
+.headerBar .has-secondary:hover .secondaryNav{
+    visibility: visible;
+    opacity: 1;
+}
+
+.secondaryNav{
+    height: auto;
+    /*width: 100%;*/
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    top: 3vw;
+    visibility: hidden;
+    opacity: 0;
+    background-color: whitesmoke;                                               /*NAV EN BLANCO*/
+    /*transform: translateY(-5%);*/                                                               /**/
+    transition: all .47s cubic-bezier(.075,.82,.165,1);
+    z-index: 100;
+}
+@media only screen and (min-width: 1025px), (orientation: landscape){
+    .navOptionPosition .secondaryNav{
+        display: flex;
+        padding: 0.4em 2.6vw 2.6vw;
+    }
+
+    .navOptionPosition .secondaryNav-group{
+        width: 15.9vw;
+    }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1366px), only screen and (orientation: landscape) and (max-width: 1366px){
+    .navOptionPosition .secondaryNav{
+        padding: 0.4em 3.9vw 3.9vw;
+        top: 4.5vw;
+    }
+    .navOptionPosition .secondaryNav-group{
+        width: 15.3vw;
+    }
+}
+@media only screen and (max-width: 1024px) and (orientation: portrait){
+    .navOptionPosition .secondaryNav{
+        max-height: 70vh;
+        top: auto;
+        bottom: 100%;
+        /*transform: translateY(10%);*/
+        padding: 0 2.60vw;
+        pointer-events: none;
+    }
+}
+/*@media only screen and (max-width: 1024px) and (orientation: portrait){
+    .navOptionPosition .secondaryNav{
+        overflow y: hidden;
+    }
+}
+@media only screen and (max-width: 1024px) and (orientation: portrait){
+    .navOptionPosition .secondaryNav:not(.transitioning){
+        overflow-y: auto!important;
+    }
+}*/
+@media only screen and (max-width: 1024px) and (orientation: portrait) and (max-width: 767px) and (orientation: portrait){
+    .navOptionPosition .secondaryNav{
+        padding: 0 5.3vw;
+    }
+}
+
+.secondaryNav-group a{
+    display: block;
+    color: white;                                                           /*LETRAS SUB MENU EN BLANCO*/
+    opacity: .5;
+}
+
+.secondaryNav-group a{
+    transition: opacity .4s ease;
+}
+@media only screen and (max-width: 1024px) and (orientation: portrait){
+    .secondaryNav-group a{
+        padding-top: 1.5625vw;
+        padding-bottom: 1.5625vw;
+        line-height: 1em;
+    }
+}
+@media only screen and (max-width: 1024px) and (orientation: portrait) and (max-width: 767px) and (orientation: portrait){
+    .secondaryNav-group a{
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+    }
+}
+
+.secondaryNav-group a.secondaryNav-link{
+    opacity: 1;
+}
+@media only screen and (min-width: 1025px), (orientation: landscape){
+    .secondaryNav-group a.secondaryNav-link{
+        padding-bottom: 0.3em;
+    }
+
+    a.break{
+        padding-top: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+    .tertiaryNav{
+        transition: all 90ms cubic-bezier(.075,.82,.165,1);
+        overflow: hidden;
+        padding-bottom: 2.8vw;
+    }
+
+    .nav-main::before{                                                      /*esto hace que el menú enté abajo en portrait*/
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #e6e6e64d;
+        backdrop-filter: blur(30px);
+    }
+}
+@media only screen and (max-width: 1024px) and (orientation: portrait) and (max-width: 767px) and (orientation: portrait){
+    .tertiaryNav{
+        padding-bottom: 5.8vw;
+    }
+}
+
+@media only screen and (max-width: 1366px){
+    .nav-main .navInterior .navMarginR.navOptionPosition>a::after {
+        width: calc(100% - 1px);
+    }
+}
+
+.navUtilityInterior{
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    line-height: 1.5em;
+}
+
+.navMarginL{
+    margin-right: 0;
+    margin-left:1.8vw;
+}
+
+.nav-utility .navUtilityInterior .navOptionPosition .secondaryNav{
+    justify-content: flex-end;
+    display: flex;
+}
+
+.nav-utility .navOptionPosition .customForm{
+    position: relative;
+    width: 300px;
+}
+
+@media only screen and (min-width: 1025px), (orientation: landscape){
+    .customForm{
+        padding: 0.42vw 0 0.41vw;
+    }
+}
+
+.searchBar{
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid black;
+    color: black;
+    font-size: 12px!important;
+    font-weight: 400;
+    letter-spacing: 1.4px;
+    padding: 1.5em 3px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.nav-logo{
+    /*height: 100%;*/
+    width: 20%;
+}
+
+.header .logo{
+    z-index: 1;
+    display: flex;
+    margin: 0 auto;
+    width: 8.85417vw;
+    height: 2.09375vw;
+    min-width: 90px;
+    min-height: 15px;
+    font-size: 28px;
+    padding: 0.52083vw 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .logoLetter{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.btn{
+    height:60px;
+    width:70px;
+}
+
+@media only screen and (min-width: 1025px), (orientation: landscape){
+    .device-only{
+        display: none!important;
+    }
+}
+
+                                                                /* CONTENIDO */
+
+.content {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/HTML/imagenes/Cuadrado.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    flex-direction: column;
+}
+
+.optionShop{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+                                                            /* CONTENIDO INFERIOR*/
+
+.contentThreeOptions{
+    padding: 20px;
+    height: 60vh;
+}
+
+.contentInterior{
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.esencialesOption{
+    background-image: url(/HTML/Landing-Page/sujetador-adhesivo.png);
+    width: calc(33.3333% - 13px);
+    position: relative;
+}
+
+.coleccionOption{
+    background-image: url(/HTML/Landing-Page/bikiniConCorazón.png);
+    width: calc(33.3333% - 13px);
+    position: relative;
+}
+
+.descuentosOption{
+    background-image: url(/HTML/Landing-Page/enterizo.jpg);
+    width: calc(33.3333% - 13px);
+    position: relative;
+}
